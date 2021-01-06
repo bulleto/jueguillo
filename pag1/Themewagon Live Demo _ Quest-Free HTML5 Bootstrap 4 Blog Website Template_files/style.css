@@ -220,6 +220,10 @@ Commom elements
 /*------------------
 Header section
  ---------------------*/
+ .centrado{
+		    margin:10px auto;
+		    display:block;
+    }
 
 .header-section {
 	position: absolute;
@@ -232,7 +236,7 @@ Header section
 
 .site-logo {
 	display: inline-block;
-	padding: 21px 55px 20px;
+	padding: 10px 40px 10px;
 	background: #222222;
 }
 
