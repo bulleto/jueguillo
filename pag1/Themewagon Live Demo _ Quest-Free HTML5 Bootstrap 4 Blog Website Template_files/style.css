@@ -87,17 +87,40 @@ ol {
 /*---------------------
 Iconos
  -----------------------*/
+ 
+ .InicioObjeto{
+ 	position:absolute;
+			top:30px;
+			left:60px;
+			border: none;
+			cursor: pointer;
+			padding: 30px;
+			color: #070804;
+			font-size: 80px;
+			transition: .3s ease all;
+ }
+ .FinObjeto{
+ 	position:absolute;
+			top:30px;
+			left:60px;
+			border: none;
+			cursor: pointer;
+			padding: 30px;
+			color: #070804;
+			font-size: 80px;
+			transition: .3s ease all;
+ }
 .pelota{
 			position:relative;
-			top:40px;
+			top:30px;
 			left:80px;
 			height: 15px;
 			width: 15px;
 			border: none;
 			cursor: pointer;
-			padding: 30px;
+			padding: 60px;
 			color: #ebfffb;
-			font-size: 30px;
+			font-size: 60px;
 			transition: .3s ease all;
 
 		}
@@ -112,6 +135,7 @@ Iconos
 			font-size: 30px;
 			transition: .3s ease all;
 		}
+
 .cuadriculaJ{
  	position: absolute;
 	top:140px;

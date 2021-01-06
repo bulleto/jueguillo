@@ -9,13 +9,7 @@
 		
 		<!-- Main Stylesheets -->
 		<link rel="stylesheet" href="./style.css">
-		<style>
-			.CuadriculaJ{
-				height: 490px;
-    			width: 1367px;
-			    background: forestgreen;
-    			position: absolute;}
-		</style>
+		
 	</head>
 
 <body>
@@ -32,8 +26,16 @@
 
 	<!--cuadricula de juego-->
 	<div class="cuadriculaJ" id="cuadriculaJ">
+		<!--inicio de juego-->
+		<div class="InicioObjeto" id="InicioObjeto">
+			<i class="fas fa-door-closed"></i>
+		</div>
+		<div class="FinObjeto" id="FinObjeto" style="display: none">
+			<i class="fas fa-door-open"></i>
+		</div>
+
 		<!--objeto-->
-		<div class="pelota" id="pelota">
+		<div class="pelota" id="pelota" style="display: none">
 			<i class="fas fa-blind"></i>
 		</div>
 		<!--meta-->
@@ -49,6 +51,7 @@
 	
 	
 	<script>
+	AlertaComenzar();
 	let pelota = document.getElementById("pelota");
 	let velocidad = 20;
 	let mTop = 0;
@@ -56,7 +59,9 @@
 
 	//captura de informacion del teclado
 	document.addEventListener("keydown", function(e){
-		if(e.keyCode == "39"){
+		if(e.keyCode == "83"){
+			StartJuego();
+		}else if(e.keyCode == "39"){
 			moverDerecha();
 		}else if(e.keyCode == "37"){
 			moverIzquierda();
@@ -69,6 +74,12 @@
 		}
 	})
 
+	//funciones que mueven el elemento
+	function StartJuego(){
+		document.getElementById("InicioObjeto").style.display="none";
+		document.getElementById("FinObjeto").style.display="block";
+		document.getElementById("pelota").style.display="block";
+	}
 	//funciones que mueven el elemento
 	function moverDerecha(){
 		mLeft += velocidad;
@@ -88,6 +99,9 @@
 	}
 	function Alerta(){
 		alert("Comando no reconocido");
+
+	}function AlertaComenzar(){
+		alert("Para comenzar presiona la tecla S");
 	}
 </script>
 
