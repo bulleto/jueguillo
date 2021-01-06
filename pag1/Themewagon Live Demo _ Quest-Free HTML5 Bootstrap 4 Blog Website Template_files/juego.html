@@ -9,13 +9,11 @@
 		<link rel="stylesheet" href="./font-awesome.min.css">
 		<link rel="stylesheet" href="./owl.carousel.min.css">
 		<!-- Iconos-->
-		<link rel="stylesheet" href="css/all.min.css">
+		<link rel="stylesheet" href="./Estiloiconos/css/all.min.css">
 
 		<!-- Main Stylesheets -->
 		<link rel="stylesheet" href="./style.css">
-		<!-- icono-->
-		<!--<script src="https://kit.fontawesome.com/f833cdfd9b.js" crossorigin="anonymous"></script>-->
-		<link rel="stylesheet" href=".Estiloiconos/css.css">		
+		
 	</head>
 
 <body>
@@ -32,11 +30,16 @@
 	</div>
 
 	<!--cuadricula de juego-->
-	<!--	<div class="cuadriculaJ" id="cuadriculaJ">-->
+	<div class="cuadriculaJ" id="cuadriculaJ">
+		<!--objeto-->
 		<div class="pelota" id="pelota">
 			<i class="fas fa-blind"></i>
 		</div>
-	<!--</div>-->
+		<!--meta-->
+		<div class="metaObjeto" id="metaObjeto">
+			<i class="fas fa-cat"></i>
+		</div>
+	</div>
 	
 	<!-- Footer section end -->												
 	<!--====== Javascripts & Jquery ======-->
@@ -49,7 +52,7 @@
 	let pelota = document.getElementById("pelota");
 	let velocidad = 50;
 	let mTop = 0;
-	let mLeft = 0;
+	let mLeft =0;
 
 	//captura de informacion del teclado
 	document.addEventListener("keydown", function(e){

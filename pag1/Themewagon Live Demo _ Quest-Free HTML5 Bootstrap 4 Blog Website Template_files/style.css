@@ -88,10 +88,9 @@ ol {
 Iconos
  -----------------------*/
 .pelota{
-			height: 15px;
-			width: 15px;
-			background: orange;
-			border-radius: 10px;
+			position:relative;
+			top:100px;
+			left:100px;
 			border: none;
 			cursor: pointer;
 			padding: 30px;
@@ -100,6 +99,23 @@ Iconos
 			transition: .3s ease all;
 
 		}
+.metaObjeto{
+	position:absolute;
+			top:250px;
+			left:1200px;
+			border: none;
+			cursor: pointer;
+			padding: 30px;
+			color: #ebfffb;
+			font-size: 30px;
+			transition: .3s ease all;
+		}
+.cuadriculaJ{
+	height: 500px;
+    width: 1367px;
+    background: darkslategray;
+    position: absolute;
+}
 
 /*---------------------
 Helper CSS
