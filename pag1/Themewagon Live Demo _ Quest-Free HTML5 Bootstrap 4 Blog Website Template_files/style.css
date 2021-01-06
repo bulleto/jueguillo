@@ -383,7 +383,7 @@ Header section
 
 .slider-progress-bar .progress {
 	height: 4px;
-	background: #10ddb4;
+	background: #1000b4;
 	-webkit-animation: sliderProgressBar ease;
 	animation: sliderProgressBar ease;
 }
