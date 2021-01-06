@@ -1,93 +1,92 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)https://technext.github.io/quest/index.html -->
-<html lang="zxx"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Los caballeros XD juego</title>
-	
-	<meta name="description" content="TheQuest Gaming Magazine Template">
-	<meta name="keywords" content="gaming, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<!-- Favicon -->
-	<link href="https://technext.github.io/quest/img/favicon.ico" rel="shortcut icon">
 
-	<!-- Google font -->
-	<link href="./css" rel="stylesheet">
+<html lang="zxx">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Los caballeros XD juego</title>
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="./bootstrap.min.css">
+		<link rel="stylesheet" href="./font-awesome.min.css">
+		<link rel="stylesheet" href="./owl.carousel.min.css">
+		<!-- Iconos-->
+		<link rel="stylesheet" href="css/all.min.css">
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="./bootstrap.min.css">
-	<link rel="stylesheet" href="./font-awesome.min.css">
-	<link rel="stylesheet" href="./magnific-popup.css">
-	<link rel="stylesheet" href="./owl.carousel.min.css">
-	<link rel="stylesheet" href="./animate.css">
-	<link rel="stylesheet" href="./slicknav.min.css">
+		<!-- Main Stylesheets -->
+		<link rel="stylesheet" href="./style.css">
+		<!-- icono-->
+		<!--<script src="https://kit.fontawesome.com/f833cdfd9b.js" crossorigin="anonymous"></script>-->
+		<link rel="stylesheet" href=".Estiloiconos/css.css">		
+	</head>
 
-	<!-- Main Stylesheets -->
-	<link rel="stylesheet" href="./style.css">
-
-
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
-</head>
 <body>
 	<!-- Page Preloder -->
 	<div id="preloder" style="display: none;">
 		<div class="loader" style="display: none;"></div>
 	</div>
 
-	<!-- Header section -->
+	<!-- LOGO-->
     <div align="center">	
-	<header class="header-section">
-		<a href="https://technext.github.io/quest/index.html" class="site-logo">
-			<img class="centrado" src="./logo.png" alt="logo">
-		</a>
-		
-    </div>
-	<div class="slicknav_menu"><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a></ul></div></header>
-	<!-- Header section end -->
-
-	<!-- Hero section -->
-	<section class="hero-section">
-		<div class="hero-slider owl-carousel owl-loaded owl-drag">
-			
-			
-		<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-4047px, 0px, 0px); transition: all 0s ease 0s; width: 8094px;"><div class="owl-item cloned" style="width: 1349px;"><div class="hero-item set-bg" data-setbg="1.jpg" style="background-image: url(&quot;1.jpg&quot;);">
-			</div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div><div class="slider-progress-bar"><span class="progress" style="-webkit-animation-duration10000ms;animation-duration:10000ms"></span></div>
-	</section>
-	<!-- Hero section end -->
-
-	<!-- Blog section -->
-
-	<!-- Blog list section -->
-
-	<!-- Video section -->
-	
-	<!-- Video section end -->
-
-	<!-- Footer section -->
-	<div class="footer-section">
-		<div class="container">
-			
-		</div>
-		<div class="social-links-warp">
-			<div class="container">
-				
-			</div>
-		</div>
+		<header class="header-section">
+		<a class="site-logo"><img class="centrado" src="./logo.png" alt="logo"></a>
+		</header>
 	</div>
-	<!-- Footer section end -->
-															
+
+	<!--cuadricula de juego-->
+	<!--	<div class="cuadriculaJ" id="cuadriculaJ">-->
+		<div class="pelota" id="pelota">
+			<i class="fas fa-blind"></i>
+		</div>
+	<!--</div>-->
+	
+	<!-- Footer section end -->												
 	<!--====== Javascripts & Jquery ======-->
 	<script src="./jquery-3.2.1.min.js.descarga"></script>
 	<script src="./bootstrap.min.js.descarga"></script>
 	<script src="./jquery.slicknav.js.descarga"></script>
 	<script src="./owl.carousel.min.js.descarga"></script>
-	<script src="./circle-progress.min.js.descarga"></script>
-	<script src="./jquery.magnific-popup.min.js.descarga"></script>
-	<script src="./main.js.descarga"></script>
-
 	
+	<script>
+	let pelota = document.getElementById("pelota");
+	let velocidad = 50;
+	let mTop = 0;
+	let mLeft = 0;
 
-</body></html>
+	//captura de informacion del teclado
+	document.addEventListener("keydown", function(e){
+		if(e.keyCode == "39"){
+			moverDerecha();
+		}else if(e.keyCode == "37"){
+			moverIzquierda();
+		}else if(e.keyCode == "38"){
+			moverArriba();
+		}else if(e.keyCode == "40"){
+			moverAbajo();
+		}else{
+			Alerta();
+		}
+	})
+
+	//funciones que mueven el elemento
+	function moverDerecha(){
+		mLeft += velocidad;
+		pelota.style.marginLeft = mLeft + "px";
+	}
+	function moverIzquierda(){
+		mLeft -= velocidad;
+		pelota.style.marginLeft = mLeft + "px";
+	}
+	function moverArriba(){
+		mTop -= velocidad;
+		pelota.style.marginTop = mTop + "px";
+	}
+	function moverAbajo(){
+		mTop += velocidad;
+		pelota.style.marginTop = mTop + "px";
+	}
+	function Alerta(){
+		alert("Comando no reconocido");
+	}
+</script>
+
+</body>
+</html>

@@ -82,6 +82,25 @@ ol {
 	margin: 0;
 }
 
+
+
+/*---------------------
+Iconos
+ -----------------------*/
+.pelota{
+			height: 15px;
+			width: 15px;
+			background: orange;
+			border-radius: 10px;
+			border: none;
+			cursor: pointer;
+			padding: 30px;
+			color: #ebfffb;
+			font-size: 30px;
+			transition: .3s ease all;
+
+		}
+
 /*---------------------
 Helper CSS
  -----------------------*/
@@ -298,7 +317,19 @@ Header section
 /*------------------
    Hero-section
  ---------------------*/
+.pelota{
+			/*height: 15px;
+			width: 15px;
+			background: orange;
+			border-radius: 10px;*/
+			border: none;
+			cursor: pointer;
+			padding: 30px;
+			color: #ebfffb;
+			font-size: 30px;
+			transition: .3s ease all;
 
+		}
 .hero-item {
 	height: 804px;
 	display: -webkit-box;
@@ -1790,3 +1821,4 @@ Responsive
 		font-size: 36px;
 	}
 }
+
