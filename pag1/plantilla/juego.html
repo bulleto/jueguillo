@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Ejemplo de un compilador visual">
+		<meta name="author" content="Equipo Los Caballeros XD">
+
+
+		<title>Los caballeros XD juego</title>
+
+		<link href="plantilla/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="./bootstrap.min.css">
+		<link rel="stylesheet" href="./font-awesome.min.css">
+		<link rel="stylesheet" href="./owl.carousel.min.css">
+		<!-- Iconos-->
+		<link rel="stylesheet" href="./Estiloiconos/css/all.min.css">
+
+		<!-- Main Stylesheets -->
+		<link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="css2/sb-admin-2.css">
+		
+	</head>
+
+<body id="pagetop">
+	<!-- Page Preloder -->
+	<div id="preloder" style="display: none;">
+		<div class="loader" style="display: none;"></div>
+	</div>
+
+	<!-- LOGO-->
+    <div align="center">	
+		<header class="header-section">
+		<a class="site-logo"><img class="centrado" src="./logo.png" alt="logo"></a>
+		</header>
+	</div>
+
+<!--	Contenedor-->
+	<div class="container, align-content-center">
+		<div class="card o-hidden border-0 shadow-lg my-5">
+			<div class="card-body p-0">
+				<!-- Nested Row within Card Body -->
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="p-5">
+							<div class="text-center">
+								<h1 class="h4 text-gray-900 mb-4">Aplicación</h1>
+							</div>
+							<hr>
+							<!-- Estructura -->
+							<div class="form-group row">
+								<div class="col-sm-6 mb-0 mb-sm-0">
+									<!--cuadricula de juego-->
+									<div class="cuadriculaJ" id="cuadriculaJ">
+										<!--objeto-->
+										<div class="pelota" id="pelota">
+											<i class="fas fa-blind"></i>
+										</div>
+										<!--meta-->
+										<div class="metaObjeto" id="metaObjeto">
+											<i class="fas fa-cat"></i>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-5">
+									<label><strong>Instrucciones</strong></label>
+									<hr class="topbar-divider">
+									<h5>
+										1.- Mueva al humano con las flechas del teclado
+									</h5>
+									<h5>
+										2.- Alcance al gatillo
+									</h5>
+									<h5>
+										3.- No use otros botones mas que las flechas direccionales
+									</h5>
+									<hr>
+									<h6>
+										<strong>Nota:</strong> El gato puede aparecer en lugares inaccesibles (como en la realidad), tendras que recargar la pagina :(
+									</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--fin contenedor-->
+
+	<footer class="sticky-footer bg-white">
+		<div class="container my-auto">
+			<div class="copyright text-center my-auto">
+				<span>Copyright &copy; <strong>Los Caballeros XD 2020</strong> </span>
+			</div>
+		</div>
+	</footer>
+	<!-- End of Footer -->
+
+	</div>
+	<!-- End of Content Wrapper -->
+
+	</div>
+	<!-- Bootstrap core JavaScript-->
+	<script src="plantilla/vendor/jquery/jquery.min.js"></script>
+	<script src="plantilla/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Core plugin JavaScript-->
+	<script src="plantilla/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script src="plantilla/js/sb-admin-2.min.js"></script>
+
+	<!-- Page level plugins -->
+	<script src="plantilla/vendor/chart.js/Chart.min.js"></script>
+
+	<!-- Page level custom scripts -->
+	<script src="plantilla/js/demo/chart-area-demo.js"></script>
+	<script src="plantilla/js/demo/chart-pie-demo.js"></script>
+	
+	<!-- Footer section end -->												
+	<!--====== Javascripts & Jquery ======-->
+	<script src="./jquery-3.2.1.min.js.descarga"></script>
+	<script src="./bootstrap.min.js.descarga"></script>
+	<script src="./jquery.slicknav.js.descarga"></script>
+	<script src="./owl.carousel.min.js.descarga"></script>
+	
+	<script>
+	let pelota = document.getElementById("pelota");
+	let gato = document.getElementById("metaObjeto");
+	let velocidad = 1;
+	let mTop = 0;
+	let mLeft =0;
+
+
+	document.addEventListener('DOMContentLoaded', (event) =>{
+		let RandCatL = getRndInteger(-9,24);
+		let RandCatT = getRndInteger(-3,5);
+		gato.style.marginLeft = RandCatL + "rem";
+		gato.style.marginTop = RandCatT + "rem";
+		pelota.style.marginTop = "1rem";
+		pelota.style.marginLeft = "3rem";
+	})
+
+
+	//captura de informacion del teclado
+	document.addEventListener("keydown", function(e){
+
+		if(e.keyCode == "39"){
+			moverDerecha();
+		}else if(e.keyCode == "37"){
+			moverIzquierda();
+		}else if(e.keyCode == "38"){
+			moverArriba();
+		}else if(e.keyCode == "40"){
+			moverAbajo();
+		}else{
+			Alerta();
+		}
+
+	})
+
+	//funciones que mueven el elemento
+	function moverDerecha(){
+		mLeft += velocidad;
+		pelota.style.marginLeft = mLeft + "rem";
+		comprobar();
+	}
+	function moverIzquierda(){
+		mLeft -= velocidad;
+		pelota.style.marginLeft = mLeft + "rem";
+		comprobar();
+	}
+	function moverArriba(){
+		mTop -= velocidad;
+		pelota.style.marginTop = mTop + "rem";
+		comprobar();
+	}
+	function moverAbajo(){
+		mTop += velocidad;
+		pelota.style.marginTop = mTop + "rem";
+		comprobar();
+	}
+	function Alerta(){
+		alert("Comando no reconocido");
+	}
+	function comprobar() {
+
+	if (pelota.style.marginLeft=="-12rem"){
+		pelota.style.marginLeft="-11rem";
+		mLeft++;
+	}else if (pelota.style.marginLeft=="27rem"){
+		pelota.style.marginLeft="26rem";
+		mLeft--;
+	}else if (pelota.style.marginTop=="7rem"){
+		pelota.style.marginTop="6rem";
+		mTop--;
+	}else if (pelota.style.marginTop=="-5rem"){
+		pelota.style.marginTop="-4rem";
+		mTop++;
+	}
+	else {
+		cerca();
+	}
+
+	}
+
+	function getRndInteger(min, max) {
+		return Math.floor(Math.random() * (max - (min)) ) + (min);
+	}
+
+	function cerca() {
+		let paddingTopCat =(gato.style.marginTop).replace("rem","");
+		let paddingLeftCat = (gato.style.marginLeft).replace("rem","");
+		let paddingTopHuman =(pelota.style.marginTop).replace("rem","");
+		let paddingLeftHuman =  (pelota.style.marginLeft).replace("rem","");
+		var numeroGatoT= parseInt(paddingTopCat);
+		var numeroGatoL= parseInt(paddingLeftCat);
+		var numeroHumanT= (parseInt(paddingTopHuman))+2;
+		var numeroHumanL= (parseInt(paddingLeftHuman))+1;
+		console.log(numeroGatoT);
+		console.log(numeroGatoL);
+		console.log(numeroHumanT);
+		console.log(numeroHumanL);
+		if ((numeroGatoL==numeroHumanL) && (numeroGatoT==numeroHumanT)){
+			alert("alcanzaste al gatillo!! YAY!!");
+			console.log("Todo bien");
+		}
+
+
+
+	}
+
+</script>
+
+</body>
+</html>

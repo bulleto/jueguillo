@@ -1,0 +1,28 @@
+.redondear{
+    font-size: 0.8rem;
+    height: 4em;
+    border-radius: 10rem;
+}
+
+.tabla_imp{
+    background-color: #2d2e33;
+    width: 6rem;
+    height: 6rem;
+}
+
+.tabla_par{
+    background-color: #2d2e33;
+    width: 6rem;
+    height: 6rem;
+}
+
+.queso{
+    color: #ffc800;
+}
+
+.persona{
+    color: white;
+
+}
+
+
