@@ -112,25 +112,14 @@ Iconos
  }
 .pelota{
 			position:relative;
-<<<<<<< HEAD:pag1/plantilla/style.css
 			top:2rem;
 			left:10rem;
 			border: none;
 			cursor: pointer;
 			padding: 0.5rem;
 			color: #ebfffb;
-			font-size: 1rem;
-=======
-			top:30px;
-			left:80px;
-			height: 15px;
-			width: 15px;
-			border: none;
-			cursor: pointer;
-			padding: 60px;
-			color: #ebfffb;
-			font-size: 60px;
->>>>>>> 576dfb2d8c9efcc632f7437646bdb69d38e28bcb:pag1/Themewagon Live Demo _ Quest-Free HTML5 Bootstrap 4 Blog Website Template_files/style.css
+			font-size: 2rem;
+
 			transition: .3s ease all;
 
 
@@ -143,21 +132,16 @@ Iconos
 			cursor: pointer;
 			padding: 0.5rem;
 			color: #ebfffb;
-			font-size: 1rem;
+			font-size: 2rem;
 			transition: .3s ease all;
+	height: 1rem;
+	width: 1rem;
 		}
 
 .cuadriculaJ{
-<<<<<<< HEAD:pag1/plantilla/style.css
 	height: 40rem;
     width: 40rem;
-=======
  	position: absolute;
-	top:140px;
-	left:10px;
-	height: 490px;
-    width: 1325px;
->>>>>>> 576dfb2d8c9efcc632f7437646bdb69d38e28bcb:pag1/Themewagon Live Demo _ Quest-Free HTML5 Bootstrap 4 Blog Website Template_files/style.css
     background: darkslategray;
     position: absolute;
 }

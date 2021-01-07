@@ -15,14 +15,14 @@
 		<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
 		<!-- Stylesheets -->
-		<link rel="stylesheet" href="./bootstrap.min.css">
-		<link rel="stylesheet" href="./font-awesome.min.css">
-		<link rel="stylesheet" href="./owl.carousel.min.css">
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="font-awesome.min.css">
+		<link rel="stylesheet" href="owl.carousel.min.css">
 		<!-- Iconos-->
-		<link rel="stylesheet" href="./Estiloiconos/css/all.min.css">
+		<link rel="stylesheet" href="Estiloiconos/css/all.min.css">
 
 		<!-- Main Stylesheets -->
-		<link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="css2/sb-admin-2.css">
 		
 	</head>
@@ -59,7 +59,7 @@
 									<div class="cuadriculaJ" id="cuadriculaJ">
 										<!--objeto-->
 										<div class="pelota" id="pelota">
-											<i class="fas fa-blind"></i>
+											<i class="fas fa-heart"></i>
 										</div>
 										<!--meta-->
 										<div class="metaObjeto" id="metaObjeto">
@@ -72,7 +72,7 @@
 									<label><strong>Instrucciones</strong></label>
 									<hr class="topbar-divider">
 									<h5>
-										1.- Mueva al humano con las flechas del teclado
+										1.- Mueva el corazón con las flechas del teclado
 									</h5>
 									<h5>
 										2.- Alcance al gatillo
@@ -192,17 +192,17 @@
 	}
 	function comprobar() {
 
-	if (pelota.style.marginLeft=="-12rem"){
-		pelota.style.marginLeft="-11rem";
+	if (pelota.style.marginLeft=="-10rem"){
+		pelota.style.marginLeft="-9rem";
 		mLeft++;
-	}else if (pelota.style.marginLeft=="27rem"){
-		pelota.style.marginLeft="26rem";
+	}else if (pelota.style.marginLeft=="28rem"){
+		pelota.style.marginLeft="27rem";
 		mLeft--;
-	}else if (pelota.style.marginTop=="7rem"){
-		pelota.style.marginTop="6rem";
+	}else if (pelota.style.marginTop=="17rem"){
+		pelota.style.marginTop="16rem";
 		mTop--;
-	}else if (pelota.style.marginTop=="-5rem"){
-		pelota.style.marginTop="-4rem";
+	}else if (pelota.style.marginTop=="-3rem"){
+		pelota.style.marginTop="-2rem";
 		mTop++;
 	}
 	else {
@@ -222,8 +222,8 @@
 		let paddingLeftHuman =  (pelota.style.marginLeft).replace("rem","");
 		var numeroGatoT= parseInt(paddingTopCat);
 		var numeroGatoL= parseInt(paddingLeftCat);
-		var numeroHumanT= (parseInt(paddingTopHuman))+2;
-		var numeroHumanL= (parseInt(paddingLeftHuman))+1;
+		var numeroHumanT= (parseInt(paddingTopHuman));
+		var numeroHumanL= (parseInt(paddingLeftHuman));
 		console.log(numeroGatoT);
 		console.log(numeroGatoL);
 		console.log(numeroHumanT);
